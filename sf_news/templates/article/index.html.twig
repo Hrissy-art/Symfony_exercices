@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Tous les articles
+{% endblock %}
+
+{% block body %}
+  <h1>新聞</h1>
+
+  {% for article in articles %}
+    {% include 'article/_article_card.html.twig' with { article: article } only %}
+  {% else %}
+    <p>Aucun article trouvé</p>
+  {% endfor %}
+{% endblock %}
